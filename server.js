@@ -10,11 +10,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+app.use(logger("dev"));
 //Deploy db 
 
 //est routes
-app.use(require("./apiRoutes/api.js"));
-app.use(require("./viewRoutes/view.js"));
+app.use(require("./routes/apiRoutes.js"));
+app.use(require("./routes/viewRoutes.js"));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);

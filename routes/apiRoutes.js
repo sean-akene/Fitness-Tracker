@@ -62,3 +62,17 @@ router.put("/api/workouts/:id", ({body, params}, res) => {
             res.json(err);
         });
 });
+
+router.delete("/api/workouts", ({ body }, res) => {
+    console.log(res);
+    Workouts.findByIdAndDelete(body.id)
+    .then(() => {
+        res.json(true)
+    })
+    .catch(err => {
+        res.json(err);
+    });
+
+});
+
+module.exports = router;
