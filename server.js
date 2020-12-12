@@ -20,3 +20,7 @@ app.use(require("./routes/viewRoutes.js"));
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
   });
+
+app.get('/stats', (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/stats.html'));
+  });
