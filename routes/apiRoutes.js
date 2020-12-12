@@ -49,18 +49,18 @@ router.put("/api/workouts/:id", function({ body, params }, res){
         res.json(err)}
 )} );
 
-// router.get("/api/workouts", (req, res) => {
-//     console.log(res);
-//     Workouts.find()
-//     .then(
-//         dbWorkOut => {
-//             res.json(dbWorkOut)
-//         }
-//     )
-//     .catch(err => {
-//         res.json(err);
-//     });
-// });
+router.get("/api/workouts", (req, res) => {
+    console.log(res);
+    db.Workout.find()
+    .then(
+        dbWorkOut => {
+            res.json(dbWorkOut)
+        }
+    )
+    .catch(err => {
+        res.json(err);
+    });
+});
 
 // router.get("/api/workouts/range", (req, res) => {
 //     console.log(res);
